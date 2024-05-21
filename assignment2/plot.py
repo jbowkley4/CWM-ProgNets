@@ -3,23 +3,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # parameters to modify
-filename="processed_iperf_test3.txt"
-label1='iperf1 s to c'
-label2='iperf2 c to s'
-xlabel = 'interval'
+filename="processedIP3_1.txt"
+label1='iperf3 test'
+xlabel = 'test number'
 ylabel = 'Bandwidth in Mbits/s'
-title='RP as server LM as client bi-directional t=10 i=1'
-fig_name='iperf_3_graph'
+title='RP as server iperf3 test'
+fig_name='iperf3graph_1'
 bins=5000 #adjust the number of bins to your plot
 
 
 t = np.loadtxt(filename, delimiter=" ", dtype="float")
 
-i=t[:,0]
-l=t[:,1]
-
-plt.plot(i[::2], l[::2], label=label1)# Plot some data on the (implicit) axes.
-plt.plot(i[::2], l[1::2], label=label2)
+plt.plot(t[:,0], t[:,1], label=label1)# Plot some data on the (implicit) axes.
 #Comment the line above and uncomment the line below to plot a CDF
 #plt.hist(t[:,1], bins, density=True, histtype='step', cumulative=True, label=label)
 plt.xlabel(xlabel)
